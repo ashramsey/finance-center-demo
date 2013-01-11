@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='<%= Rails.application.config.encoding %>' />
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+  <title><%= yield :title %></title>
+  <%= yield :meta %>
+
+  <%= stylesheet_link_tag "application", "formatting", "theme" %>
+  <style type="text/css">
+    body { border: 1px solid #0f0; }
+    #application_layout_note { color: #0f0; }
+  </style>
+  <%= yield :stylesheets %>
+
+
+
+  <%= javascript_include_tag 'modernizr-min' %>
+</head>
+<body>
+
+  <h5 id="application_layout_note">Application layout</h5>
+
+  <%= yield :whitelabel_content %>
+
+</body>
+</html>
