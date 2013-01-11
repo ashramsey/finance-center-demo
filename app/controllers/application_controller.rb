@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   layout :set_layout
   
   def set_layout
-    'layouts/label_a'
+    "layouts/#{request.subdomain}"
   end
 end

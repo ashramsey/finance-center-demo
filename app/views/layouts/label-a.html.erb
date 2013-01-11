@@ -1,0 +1,29 @@
+<% content_for :stylesheets do %>
+  <style type="text/css">
+    #page_container { border: 1px solid #00f; margin:10px;}
+    #whitelabel_layout_note { color: #00f; }
+    #page { padding: 20px; min-height:200px; }
+    #cms_main_section, #cms_side_section { border: 1px solid #f00; }
+    #cms_main_section { width: 70%; float: left; }
+    #cms_side_section { width: 20%; float: right;}
+    #cms_main_section h5, #cms_side_section h5 { color: #f00; }
+    #right_menu {float: right; background-color: yellow; color: black}
+  </style>
+<% end %>
+<% content_for :whitelabel_content do %>
+  <div id="page_container">
+    <h5 id="whitelabel_layout_note">Whitelabel A layout</h5>
+    <header id="header">
+
+    </header>
+    <section id="page">
+      <%= yield %>
+    </section>
+    <footer>
+
+    </footer>
+  </div>
+
+<% end %>
+
+<%= render template: 'layouts/application' %>

@@ -5,9 +5,11 @@ FinanceCenterDemo::Application.routes.draw do
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
-  mount Refinery::Core::Engine, :at => '/articles/'
+  # constraints(:subdomain => 'label_a|label_b') do
+    mount Refinery::Core::Engine, :at => '/articles/'
+  # end
 
-  match "/" => 'home#index', :constraints => {:subdomain => "finance"}
+  # match "/" => 'home#index', :constraints => {:subdomain => "finance|label_a"}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
